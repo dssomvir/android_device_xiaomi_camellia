@@ -1640,6 +1640,8 @@ vendor/etc/mdota/MTK_OPOTA_SBPID_7.mcfopota
 vendor/etc/mdota/MTK_OPOTA_SBPID_202.mcfopota
 vendor/etc/mdota/MTK_OPOTA_SBPID_15.mcfopota
 
+# NEURALNETWORKS PATCH CANNON
+
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
 vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml
@@ -1648,7 +1650,35 @@ vendor/lib64/libneuron_platform.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/mt6833/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libarmnn.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
-system_ext/lib64/libarmnn_ndk.mtk.so
-system_ext/lib64/libcmdl_ndk.mtk.so
+system_ext/lib64/libarmnn_ndk.mtk.so:vendor/lib64/libarmnn_ndk.mtk.so
+system_ext/lib64/libcmdl_ndk.mtk.so:vendor/lib64/libcmdl_ndk.mtk.so
+system_ext/lib64/libapuwareapusys.mtk.so:vendor/lib64/libapuwareapusys.mtk.so
+vendor/lib64/APUWareApusysServer.so
+vendor/lib64/APUWareXrpServer_v2.so
+system_ext/lib64/libapuwarexrp.mtk.so:vendor/lib64/libapuwarexrp.mtk.so
+system_ext/lib64/libapuwarexrp.mtk.so:vendor/lib64/APUWareXrpServer.so;FIX_SONAME
+system_ext/lib64/libapuwarehmp.mtk.so:vendor/lib64/APUWareHmpServer.so;FIX_SONAME
+system_ext/lib64/libapuwarehmp.mtk.so:vendor/lib64/libapuwarehmp.mtk.so
+system_ext/lib64/libapuwarexrp_v2.mtk.so:vendor/lib64/libapuwarexrp_v2.mtk.so
+system_ext/lib64/libapuwareutils.mtk.so:vendor/lib64/libapuwareutils.mtk.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.xrp@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.hmp@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.xrp@2.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.utils@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so:vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so
+system_ext/lib64/vendor.mediatek.hardware.apuware.apusys@1.0.so:vendor/lib64/vendor.mediatek.hardware.apuware.apusys@1.0.so
+system/lib64/vendor.mediatek.hardware.apuware.apusys-V1-ndk.so:vendor/lib64/vendor.mediatek.hardware.apuware.apusys-V1-ndk.so
+vendor/lib64/libapu_mdw.so
+vendor/lib64/libapusys.so
+vendor/lib64/libapusys_edma.so
+vendor/lib64/hw/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
+vendor/lib64/hw/libneuron_runtime.so;SYMLINK=vendor/lib64/libneuron_runtime.so
+vendor/lib64/libneuron_adapter.so
+vendor/lib64/libvpu.so
+vendor/lib64/libmcv_runtime.mtk.so
+vendor/lib64/APUWareUtilsServer.so

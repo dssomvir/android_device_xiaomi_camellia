@@ -43,6 +43,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libui_shim.so'),
     'system/priv-app/ImsService/ImsService.apk': blob_fixup()
         .apktool_patch('blob-patches/ImsService.patch', '-r'),
+    'system/framework/mediatek-telephony-base.jar': blob_fixup()
+        .apktool_patch('blob-patches/mediatek-telephony-base.patch', '-r'),
     'vendor/lib/hw/vendor.mediatek.hardware.pq@2.13-impl.so': blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so'),
     ('vendor/bin/mnld', 'vendor/lib64/libaalservice.so', 'vendor/lib64/libcam.utils.sensorprovider.so', 'vendor/lib64/librgbwlightsensor.so'): blob_fixup()

@@ -211,3 +211,94 @@ diff --git a/smali/com/mediatek/wfo/impl/WifiPdnHandler.smali b/smali/com/mediat
  
      .line 851
      return-void
+
+diff --git a/smali/com/mediatek/ims/ImsCallSessionProxy.smali b/smali/com/mediatek/ims/ImsCallSessionProxy.smali
+--- a/smali/com/mediatek/ims/ImsCallSessionProxy.smali
++++ b/smali/com/mediatek/ims/ImsCallSessionProxy.smali
+@@ -11417,7 +11417,7 @@
+     .local v2, "volteEnabledByUser":Z
+     iget v3, p0, Lcom/mediatek/ims/ImsCallSessionProxy;->mPhoneId:I
+ 
+-    invoke-static {v3}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {v3}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v3
+ 
+diff --git a/smali/com/mediatek/ims/ImsEcbmProxy.smali b/smali/com/mediatek/ims/ImsEcbmProxy.smali
+--- a/smali/com/mediatek/ims/ImsEcbmProxy.smali
++++ b/smali/com/mediatek/ims/ImsEcbmProxy.smali
+@@ -195,7 +195,7 @@
+     .line 143
+     iget v0, p0, Lcom/mediatek/ims/ImsEcbmProxy;->mPhoneId:I
+ 
+-    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {v0}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v0
+ 
+diff --git a/smali/com/mediatek/ims/ImsService$MyHandler.smali b/smali/com/mediatek/ims/ImsService$MyHandler.smali
+--- a/smali/com/mediatek/ims/ImsService$MyHandler.smali
++++ b/smali/com/mediatek/ims/ImsService$MyHandler.smali
+@@ -2561,7 +2561,7 @@
+     :goto_b
+     iget v4, v1, Lcom/mediatek/ims/ImsService$MyHandler;->mSocketId:I
+ 
+-    invoke-static {v4}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {v4}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v4
+ 
+diff --git a/smali/com/mediatek/ims/ImsService.smali b/smali/com/mediatek/ims/ImsService.smali
+--- a/smali/com/mediatek/ims/ImsService.smali
++++ b/smali/com/mediatek/ims/ImsService.smali
+@@ -15660,7 +15660,7 @@
+ 
+     .line 1537
+     :cond_4
+-    invoke-static {p2}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {p2}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v3
+ 
+diff --git a/smali/com/mediatek/ims/config/internal/ImsConfigEventReceiver.smali b/smali/com/mediatek/ims/config/internal/ImsConfigEventReceiver.smali
+--- a/smali/com/mediatek/ims/config/internal/ImsConfigEventReceiver.smali
++++ b/smali/com/mediatek/ims/config/internal/ImsConfigEventReceiver.smali
+@@ -142,7 +142,7 @@
+     iput-object v1, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mLogTag:Ljava/lang/String;
+ 
+     .line 66
+-    invoke-static {p2}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {p2}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v1
+ 
+@@ -236,7 +236,7 @@
+ 
+     .line 268
+     :cond_0
+-    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {v1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v1
+ 
+@@ -1167,7 +1167,7 @@
+     .line 122
+     iget v1, p0, Lcom/mediatek/ims/config/internal/ImsConfigEventReceiver;->mPhoneId:I
+ 
+-    invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {v1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v1
+ 
+diff --git a/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali b/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali
+--- a/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali
++++ b/smali/com/mediatek/wfo/impl/ImsLocationHandler.smali
+@@ -2044,7 +2044,7 @@
+ 
+     .line 981
+     .local v0, "ret":I
+-    invoke-static {p3}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {p3}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v2
+ 

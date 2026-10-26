@@ -1,0 +1,35 @@
+diff --git a/smali/com/mediatek/telephony/MtkTelephonyManagerEx.smali b/smali/com/mediatek/telephony/MtkTelephonyManagerEx.smali
+--- a/smali/com/mediatek/telephony/MtkTelephonyManagerEx.smali
++++ b/smali/com/mediatek/telephony/MtkTelephonyManagerEx.smali
+@@ -2840,7 +2840,7 @@
+     .param p1, "slotId"    # I
+ 
+     .line 1329
+-    invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {p1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v0
+ 
+@@ -2878,7 +2878,7 @@
+     .param p1, "slotId"    # I
+ 
+     .line 1300
+-    invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSimStateForSlotIndex(I)I
++    invoke-static {p1}, Landroid/telephony/TelephonyManager;->getSimStateForSlotIndex(I)I
+ 
+     move-result v0
+ 
+
+diff --git a/apktool.yml b/apktool.yml
+--- a/apktool.yml
++++ b/apktool.yml
+@@ -5,7 +5,7 @@
+ usesFramework:
+   ids:
+   tag: null
+ sdkInfo:
+-  minSdkVersion: 28
++  minSdkVersion: 29
+ packageInfo:
+   forcedPackageId: null
+   renameManifestPackage: null
