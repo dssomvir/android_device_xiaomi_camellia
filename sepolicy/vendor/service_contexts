@@ -1,0 +1,2 @@
+# The radio compatibility service checks the AIDL instance corresponding to the legacy HIDL em1.
+android.hardware.radio.data.IRadioData/em1 u:object_r:hal_radio_service:s0
